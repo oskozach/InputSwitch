@@ -1,7 +1,6 @@
 #include "src/InputSwitch/InputSwitch.h"
 
-Timer timer;
-InputSwitch btn(&timer, 12, FALLING, true);
+InputSwitch btn(12, FALLING, true);
 
 void setup() {
   Serial.begin(9600);
