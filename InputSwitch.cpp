@@ -2,24 +2,15 @@
 
 InputSwitch::InputSwitch(uint8_t pin, uint8_t mode, bool nc, uint32_t msDebounce) 
                             : _timer(), _pin(pin), _mode(mode), _nc(nc), 
-                                _state(false), _reading(false) {
+                                _state(false) {
     _timer.setTimeout(msDebounce);
 }
 
-bool InputSwitch::_read() { 
-    bool reading = (_nc)
-                    ? !digitalRead(_pin) 
-                    : digitalRead(_pin);
-    if(reading != _reading)
-        _timer.refresh();
-    _reading = reading;
-    return _reading;
-}
+bool InputSwitch::_read() { return (_nc) ? !digitalRead(_pin) : digitalRead(_pin); }
 
 void InputSwitch::begin() {
     pinMode(_pin, INPUT);
     _state = false;
-    _reading = false;
     _timer.start();
 }
 

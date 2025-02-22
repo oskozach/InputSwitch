@@ -15,7 +15,6 @@ class InputSwitch {
         uint8_t _mode; // CHANGE, RISING, FALLING
         bool _nc;
         bool _state;
-        bool _reading;
         bool _read();
     public:
         InputSwitch(uint8_t pin = INPUT_SWITCH_DEFAULT_PIN,
