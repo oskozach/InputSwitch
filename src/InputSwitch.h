@@ -1,7 +1,7 @@
 #ifndef __INPUT_SWITCH_H__
 #define __INPUT_SWITCH_H__
 #include <Arduino.h>
-#include "src/Timer.h"
+#include <Timer.h>
 
 #define INPUT_SWITCH_DEFAULT_PIN            2
 #define INPUT_SWITCH_DEFAULT_MODE           CHANGE

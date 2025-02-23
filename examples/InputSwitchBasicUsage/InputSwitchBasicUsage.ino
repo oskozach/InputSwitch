@@ -1,11 +1,10 @@
-#include "src/InputSwitch/InputSwitch.h"
+#include <InputSwitch.h>
 
 InputSwitch btn(12, FALLING, true);
 
 void setup() {
   Serial.begin(9600);
   delay(500);
-
   btn.begin();
 }
 
