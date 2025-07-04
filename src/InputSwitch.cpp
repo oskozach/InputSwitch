@@ -27,8 +27,6 @@ bool InputSwitch::changed() {
 
 bool InputSwitch::getState() { return _state; }
 
-void InputSwitch::setPin(uint8_t pin) { _pin = pin; }
-
 void InputSwitch::setMode(uint8_t mode) {
     if(mode != CHANGE && mode != RISING && mode != FALLING)
         return;
