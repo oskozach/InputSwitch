@@ -1,14 +1,17 @@
 #include <InputSwitch.h>
 
-InputSwitch btn(12, FALLING, true);
+#define SWITCH_PIN D3
+
+InputSwitch sw(SWITCH_PIN, true);
 
 void setup() {
   Serial.begin(9600);
   delay(500);
-  btn.begin();
+
+  sw.begin();
+  sw.onChanged([]() { Serial.println("changed"); });
+  sw.onRising([]() { Serial.println("rising"); });
+  sw.onFalling([]() { Serial.println("falling"); });
 }
 
-void loop() {
-  if(btn.changed())
-    Serial.println("changed");
-}
+void loop() { sw.update(); }
