@@ -18,3 +18,6 @@ The library now also includes **InputButton**, a subclass of `InputSwitch`, whic
 - `onPress()` and `onRelease()` – sugar functions for `onRising()` and `onFalling()` respectively
 
 It is especially useful for handling buttons in interactive applications.
+
+## Dependencies
+Requires the [MsTime](https://github.com/oskozach/MsTime) library.
