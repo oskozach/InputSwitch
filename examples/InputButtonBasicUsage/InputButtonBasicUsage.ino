@@ -17,12 +17,12 @@ void setup() {
     
   btn.begin();
 
-  btn.onChanged(onChanged);
-  btn.onPressed(onPressed);
-  btn.onReleased(onReleased);
+  btn.onChange(onChanged);
+  btn.onPress(onPressed);
+  btn.onRelease(onReleased);
+  btn.onLongPress(onLongPressed);
   btn.onClick(onClick);
   btn.onDoubleClick(onDoubleClick);
-  btn.onLongPressed(onLongPressed);
 }
 
 void loop() {

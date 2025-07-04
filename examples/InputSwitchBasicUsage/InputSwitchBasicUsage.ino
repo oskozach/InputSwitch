@@ -9,7 +9,7 @@ void setup() {
   delay(500);
 
   sw.begin();
-  sw.onChanged([]() { Serial.println("changed"); });
+  sw.onChange([]() { Serial.println("changed"); });
   sw.onRising([]() { Serial.println("rising"); });
   sw.onFalling([]() { Serial.println("falling"); });
 }
