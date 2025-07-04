@@ -1,6 +1,6 @@
 #include <InputSwitch.h>
 
-#define SWITCH_PIN D3
+#define SWITCH_PIN 4
 
 InputSwitch sw(SWITCH_PIN, true);
 
