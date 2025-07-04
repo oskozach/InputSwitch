@@ -10,7 +10,7 @@
 
 class InputSwitch {
     private:
-        Timer _timer;
+        Timer _debounceTimer;
         uint8_t _pin;
         uint8_t _mode; // CHANGE, RISING, FALLING
         bool _nc;

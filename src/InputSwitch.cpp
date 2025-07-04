@@ -1,9 +1,8 @@
 #include "InputSwitch.h"
 
 InputSwitch::InputSwitch(uint8_t pin, uint8_t mode, bool nc, uint32_t msDebounce) 
-                            : _timer(), _pin(pin), _mode(mode), _nc(nc), 
-                                _state(false) {
-    _timer.setTimeout(msDebounce);
+                            : _debounceTimer(), _pin(pin), _nc(nc), _state(false) {
+    _debounceTimer.setTimeout(msDebounce);
 }
 
 bool InputSwitch::_read() { return (_nc) ? !digitalRead(_pin) : digitalRead(_pin); }
@@ -11,12 +10,12 @@ bool InputSwitch::_read() { return (_nc) ? !digitalRead(_pin) : digitalRead(_pin
 void InputSwitch::begin() {
     pinMode(_pin, INPUT);
     _state = false;
-    _timer.start();
+    _debounceTimer.start();
 }
 
 bool InputSwitch::changed() {
     bool reading = _read();
-    if(reading == _state || !_timer.tick())
+    if(reading == _state || !_debounceTimer.tick())
         return false;
     _state = reading;
     return ((_mode == CHANGE) 
@@ -38,4 +37,4 @@ void InputSwitch::setMode(uint8_t mode) {
 
 void InputSwitch::setNc(bool nc) { _nc = nc; }
 
-void InputSwitch::setMsDebounce(uint32_t msDebounce) { _timer.setTimeout(msDebounce); }
+void InputSwitch::setMsDebounce(uint32_t msDebounce) { _debounceTimer.setTimeout(msDebounce); }
