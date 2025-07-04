@@ -1,10 +1,10 @@
 # Class name
 InputSwitch	KEYWORD1
+InputButton	KEYWORD1
 
 # Methods
 begin	KEYWORD2
 update	KEYWORD2
-
 onChange    KEYWORD2
 onRising    KEYWORD2
 onFalling   KEYWORD2
@@ -15,7 +15,23 @@ detachAll   KEYWORD2
 getState	KEYWORD2
 setNc	KEYWORD2
 setMsDebounce	KEYWORD2
+onPress KEYWORD2
+onRelease   KEYWORD2
+onLongPress KEYWORD2
+onClick KEYWORD2
+onDoubleClick   KEYWORD2
+detachOnPress   KEYWORD2
+detachOnRelease KEYWORD2
+detachOnLongPress   KEYWORD2
+detachOnClick   KEYWORD2
+detachOnDoubleClick KEYWORD2
+detachAll   KEYWORD2
+setClickPendingTimeout  KEYWORD2
+setLongPressTimeout KEYWORD2
 
 # Constants
 INPUT_SWITCH_DEFAULT_NC KEYWORD3
 INPUT_SWITCH_DEFAULT_MS_DEBOUNCE    KEYWORD3
+INPUT_BUTTON_DEFAULT_NC KEYWORD3
+INPUT_BUTTON_DEFAULT_MS_CLICK_PENDING   KEYWORD3
+INPUT_BUTTON_DEFAULT_MS_LONG_PRESS  KEYWORD3
