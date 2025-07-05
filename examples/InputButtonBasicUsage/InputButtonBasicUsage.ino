@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <InputButton.h>
 
 #define BTN_PIN 4
@@ -14,13 +13,13 @@ void onLongPress() { Serial.println("Long Pressed"); }
 
 void setup() {
   Serial.begin(9600);
-    
+
   btn.begin();
 
-  btn.onChange(onChanged);
-  btn.onPress(onPressed);
-  btn.onRelease(onReleased);
-  btn.onLongPress(onLongPressed);
+  btn.onChange(onChange);
+  btn.onPress(onPress);
+  btn.onRelease(onRelease);
+  btn.onLongPress(onLongPress);
   btn.onClick(onClick);
   btn.onDoubleClick(onDoubleClick);
 }
